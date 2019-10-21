@@ -1,0 +1,16 @@
+<div class="header_banner"><div class="wmain"><div class="header_slider">
+<repeat group="{{ @list }}" value="{{ @list_node }}">
+<div><a class="hs_inner" href="{{ !empty(@list_node.af_link)?@list_node.af_link:'#' }}">
+<check if="{{ @list_node.style.obj_af_bg->exists() }}">
+<img src="{{ @list_node.style.obj_af_bg->src() }}" alt="{{ @list_node.title }}">
+</check>
+<div class="hs_content" style="{{ !empty(@list_node.style.af_color)?'background:'.@list_node.style.af_color.';':'' }}"><div class="hs_content_inner">
+<div class="hsc_top">
+<b>{{ @list_node.title }}</b>
+<check if="{{ !empty(@list_node.af_adres) }}"><span>{{ @list_node.af_adres }}</span></check>
+</div>
+<check if="{{ !empty(@list_node.af_info) }}"><div class="hsc_bottom">{{ @list_node.af_info }}</div></check>
+</div></div>
+</a></div>
+</repeat>
+</div></div></div>

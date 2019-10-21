@@ -1,0 +1,40 @@
+<asset src="/js/form.min.js" slot="form"/>
+<include href="{{ @site.tpl.'/blocks/angular_scripts.html' }}" />
+<div class="head_inner">
+    <div class="wmain">
+        <include href="{{ @site['tpl'].'/blocks/breadcrumbs.html' }}"/>
+        <h1>{{ @html.page_title }} 
+            <check if="{{ @html.page_title_add }}"><span>{{ @html.page_title_add }}</span>
+            </check>
+        </h1>
+    </div>
+</div>
+<div class="doc_content">
+    <div class="wmain">
+        <div class="zayvaka_content">
+            <form class="zayavka_form loader" action="{{ 'frontend_tp_fl_post' | alias }}" method="post">
+                <div class="zcb_inputs">
+                </div> 
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    var listCalc = {};
+    var listConst = {};
+    var listOption = {};
+        <repeat group="{{ @listCalc }}" value="{{ @value }}" key="{{ @key }}">
+        listCalc["{{ @value.ID }}"] = {
+            text: "{{ @value.TEXT }}"
+            };
+            </repeat>
+        <repeat group="{{ @listConst }}" value="{{ @value }}" key="{{ @key }}">
+    listConst["{{ @value.ID }}"] = parseFloat("{{ @value.VALUE }}");
+            </repeat>
+            <repeat group="{{ @listOption }}" value="{{ @value }}" key="{{ @key }}">
+                listOption["{{ @value.ID }}"] = {
+                    val: parseFloat("{{ @value.VALUE }}"),
+                    text: "{{ @value.TEXT }}"
+    };
+    </repeat>
+</script>

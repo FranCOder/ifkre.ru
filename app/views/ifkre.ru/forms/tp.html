@@ -1,0 +1,524 @@
+<div class="zayvaka_content">
+    <form id='send_form' enctype="multipart/form-data" class="zayavka_form" action="{{ 'frontend_tp_fl_post' | alias }}" method="post">
+        <div class="zcb_inputs">
+            <div class="block is-active ready" id='block1' data-next='block2'>
+                <h3 class="">1. Сведения о Заявителе</h3>
+                <div class="box_cont" style="">
+                    <div class="zcb_input_list zcb_in_3" data-block="name" data-title="Сведения о Заявителе">
+                        <div class="zcb_in_inner"><div class="zcb_in_title">Фамилия</div><input name="name.fio_f" data-req="Y" type="text"></div>
+                        <div class="zcb_in_inner"><div class="zcb_in_title">Имя</div><input name="name.fio_i" data-req="Y" type="text"></div>
+                        <div class="zcb_in_inner"><div class="zcb_in_title">Отчество</div><input name="name.fio_o" data-req="Y" type="text"></div>
+                        <div class="zcb_in_inner"><div class="zcb_in_title">Телефон</div><input name="name.phone" data-req="Y" type="text"></div>
+                        <div class="zcb_in_inner"><div class="zcb_in_title">Email</div><input name="name.email" data-req="N" type="text"></div>
+                    </div>
+                    <div class="zc_block_inner">
+                        <div class="zcbi_name">Место жительства(регистрации):</div>
+                        <div class="zcb_input_list zcb_in_reg" data-block="reg" data-title="Место жительства(регистрации)">
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Индекс</div><input name="reg.index" data-req="Y" type="text"></div>
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Город</div><input name="reg.city" data-req="Y" type="text"></div>
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Улица</div><input name="reg.street" data-req="Y" type="text"></div>
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Дом</div><input name="reg.house" data-req="Y" type="text"></div>
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Корп.</div><input name="reg.number" data-req="N" type="text"></div>
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Кв.</div><input name="reg.flat" data-req="N" type="text"></div>
+                        </div>
+                    </div>
+                    <div class="zc_block_inner">
+                        <div class="zcbi_name">Почтовый адрес <span><a class="zcbi_btn_copy" href="#">Скопировать данные с места жительства</a></span></div>
+                        <div class="zcb_input_list zcb_in_reg" data-block="post" data-title="Почтовый адрес">
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Индекс</div><input name="post.index" data-req="Y" type="text"></div>
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Город</div><input name="post.city" data-req="Y" type="text"></div>
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Улица</div><input name="post.street" data-req="Y" type="text"></div>
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Дом</div><input name="post.house" data-req="Y" type="text"></div>
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Корп.</div><input name="post.number" data-req="N" type="text"></div>
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Кв.</div><input name="post.flat" data-req="N" type="text"></div>
+                        </div>
+                    </div>
+                    <div class="zc_block_inner" data-block="doc" data-title="Документ, удостоверяющий личность">
+                        <div class="zcbi_name">Документ, удостоверяющий личность:</div>
+                        <div class="zcb_input_list zcb_in_doc">
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Серия</div><input name="doc.serial" data-req="Y" type="text"></div>
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Номер</div><input name="doc.number" data-req="Y" type="text"></div>
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Код подр.</div><input name="doc.code" data-req="Y" type="text"></div>
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Место рождения</div><input name="doc.place" data-req="Y" type="text"></div>
+                        </div>
+                        <div class="zcb_input_list zcb_in_issu">
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Кем выдан</div><input name="doc.who" data-req="Y" type="text"></div>
+                            <div class="zcb_in_inner"><div class="zcb_in_title">Когда выдан</div><input name="doc.when" data-req="Y" type="text"></div>
+                        </div>
+                    </div>
+                    <div class="zayavka_send"><a href="#box1" class="btn_f btn_next blocked">Далее</a></div>
+                </div>
+
+            </div>
+            <div class="block ready" id='block2' data-next="block3">
+                <h3 class="">2. Информация об объекте</h3>
+                <div class="box_cont" style="display: none;">
+                    <div class="zcb_in_inner" data-block="target"><div class="zcb_in_title">Цель подключения</div>
+                        <select name="target.base" data-placeholder="Выберите основание" data-req="Y">
+                            <option></option>
+                            <option value="1">подключение (технологическое присоединение) к сетигазораспределения объекта капитального строительства</option>
+                            <option value="2">увеличение объема потребления газа и (или) пропускной способности (для сети газораспределения) подключаемогообъекта капитального строительства</option>
+                            <option value="3">изменение схемыгазоснабжения подключенного объекта капитальногостроительства</option>
+                        </select>
+                    </div>
+                    <div class="zc_block_two">
+                        <div class="zcbi_name">Наименование объекта капитального строительства:</div>
+                        <div class="zbt_inner">
+                            <div class="pu_radio_list" data-block="obj" data-title="Объект капитального строительства">
+                                <label><input type="radio" name="obj.type" value="house" data-title="Индивидуальный жилой дом"><span>Индивидуальный жилой дом</span></label>
+                                <label><input type="radio" name="obj.type" value="bath" data-title="Баня"><span>Баня</span></label>
+                                <label><input type="radio" name="obj.type" value="boiler" data-title="Автономная котельная"><span>Автономная котельная</span></label>
+                                <label><input type="radio" name="obj.type" value="greenhouse" data-title="Теплица"><span>Теплица</span></label>
+                                <label><input type="radio" name="obj.type" value="another" data-title="Иное"><span>Иное</span></label>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="zc_block_inner">
+                        <div class="zcbi_name">Местонахождение объекта капитального строительства:</div>
+                        <div data-block="place" data-title="Местонахождение объекта капитального строительства">
+                            <div class="zcb_input_list zcb_place">
+                                <div class="zcb_in_inner"><div class="zcb_in_title">Регион</div><input name="place.region" data-req="Y" type="text"></div>
+                                <div class="zcb_in_inner"><div class="zcb_in_title">Район</div><input name="place.dist" data-req="N" type="text"></div>
+                                <div class="zcb_in_inner"><div class="zcb_in_title">Населённый пункт</div><input name="place.city" data-req="Y" type="text"></div>
+                                <div class="zcb_in_inner"><div class="zcb_in_title">Улица</div><input name="place.street" data-req="Y" type="text"></div>
+                                <div class="zcb_in_inner"><div class="zcb_in_title">Дом</div><input name="place.house" data-req="Y" type="text"></div>
+                                <div class="zcb_in_inner"><div class="zcb_in_title">Корп.</div><input name="place.number" data-req="N" type="text"></div>
+                                <div class="zcb_in_inner"><div class="zcb_in_title">Кв.</div><input name="place.flat" data-req="N" type="text"></div>
+                                <div class="zcb_in_inner"><div class="zcb_in_title">Кадастровый номер</div><input name="place.kad" data-req="Y" type="text"></div>
+                                <div class="zcb_in_inner"><div class="zcb_in_title">Вид права собственности</div><input name="place.type" data-req="Y" type="text"></div>
+                            </div>
+                            <div class="zcb_in_inner">
+                                <div class="zcb_in_title">Планируемая величина максимального часового расхода газа (если ранее технические условия не выдавались):</div>     
+                                <input name="place.volume" data-req="N" type="text">
+                            </div>
+                            <div class="zcb_in_inner">
+                                <div class="zcb_in_title">Максимальная  нагрузка  (часовой  расход  газа) по каждой из точек подключения
+                                    (указывается, если ранее технические условия не выдавались), через запятую:</div>     
+                                <input name="place.max" data-req="N" placeholder="4.5, 5.5" type="text">
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="zc_block_two">
+                        <div class="zcbi_name">Cостояние объекта капитального строительства:</div>
+                        <div class="zbt_inner">
+                            <div class="pu_radio_list" data-block="obj" data-title="Объект капитального строительства">
+                                <label><input type="radio" name="obj.status" value="new" data-title="Существующий"><span>Существующий</span></label>
+                                <label><input type="radio" name="obj.status" value="build" data-title="Строящийся"><span>Строящийся</span></label>
+                                <label><input type="radio" name="obj.status" value="recon" data-title="Реконструируемый"><span>Реконструируемый</span></label>
+                            </div>
+                        </div>
+                    </div>                     
+                    <div class="zayavka_send"><a href="#box1" class="btn_f btn_next blocked">Далее</a></div>
+                </div>
+            </div>
+            <div class="block ready" id="block3" data-next="block4">
+                <h3 class="">3. Сроки проектирования, строительства и поэтапного введения в эксплуатацию объекта капитального строительства <i>(в том числе по этапам и очередям):</i></h3>
+                <div class="box_cont" style="display: none;">
+                    <div class="zcb_input_list zcb_in_32" data-block="proekt1" data-title="Сроки проектирования, строительства и поэтапного введения в эксплуатацию объекта капитального строительства: этап 1">
+                        <div class="zcb_in_inner"><div class="zcb_in_title">I этап:</div>
+                            <input name="proekt1.name" data-req="Y" type="text">
+                        </div>
+                        <div class="zcb_in_inner"><div class="zcb_in_title">Месяц:</div>
+                            <select name="proekt1.month" data-placeholder="Выберите месяц" data-req="Y">
+                                <option></option>
+                                <option value="1">Январь</option>
+                                <option value="2">Февраль</option>
+                                <option value="3">Март</option>
+                                <option value="4">Апрель</option>
+                                <option value="5">Май</option>
+                                <option value="6">Июнь</option>
+                                <option value="7">Июль</option>
+                                <option value="8">Август</option>
+                                <option value="9">Сентябрь</option>
+                                <option value="10">Октябрь</option>
+                                <option value="11">Ноябрь</option>
+                                <option value="12">Декабрь</option>
+                            </select>
+                        </div>
+                        <div class="zcb_in_inner"><div class="zcb_in_title">Год:</div>
+                            <select name="proekt1.year" data-placeholder="Выберите год" data-req="Y">
+                                <option></option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="zcb_input_list zcb_in_32" data-block="proekt2" data-title="Сроки проектирования, строительства и поэтапного введения в эксплуатацию объекта капитального строительства: этап 2">
+                        <div class="zcb_in_inner"><div class="zcb_in_title">II этап:</div>
+                            <input name="proekt2.name" data-req="N" type="text">
+                        </div>
+                        <div class="zcb_in_inner">
+                            <div class="zcb_in_title">
+                                Месяц:
+                            </div>
+                            <select name="proekt2.month" data-placeholder="Выберите месяц">
+                                <option></option>
+                                <option value="1">Январь</option>
+                                <option value="2">Февраль</option>
+                                <option value="3">Март</option>
+                                <option value="4">Апрель</option>
+                                <option value="5">Май</option>
+                                <option value="6">Июнь</option>
+                                <option value="7">Июль</option>
+                                <option value="8">Август</option>
+                                <option value="9">Сентябрь</option>
+                                <option value="10">Октябрь</option>
+                                <option value="11">Ноябрь</option>
+                                <option value="12">Декабрь</option>
+                            </select>
+                        </div>
+                        <div class="zcb_in_inner"><div class="zcb_in_title">Год: </div>
+                            <select name="proekt2.year" data-placeholder="Выберите год">
+                                <option></option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="zcb_input_list zcb_in_32" data-block="proekt3" data-title="Сроки проектирования, строительства и поэтапного введения в эксплуатацию объекта капитального строительства: этап 3">
+                        <div class="zcb_in_inner">
+                            <div class="zcb_in_title">III этап:</div>
+                            <input name="proekt3.name" data-req="N" type="text">
+                        </div>
+                        <div class="zcb_in_inner"><div class="zcb_in_title">Месяц:</div>
+                            <select name="proekt3.month" data-placeholder="Выберите месяц">
+                                <option></option>
+                                <option value="1">Январь</option>
+                                <option value="2">Февраль</option>
+                                <option value="3">Март</option>
+                                <option value="4">Апрель</option>
+                                <option value="5">Май</option>
+                                <option value="6">Июнь</option>
+                                <option value="7">Июль</option>
+                                <option value="8">Август</option>
+                                <option value="9">Сентябрь</option>
+                                <option value="10">Октябрь</option>
+                                <option value="11">Ноябрь</option>
+                                <option value="12">Декабрь</option>
+                            </select>
+                        </div>
+                        <div class="zcb_in_inner"><div class="zcb_in_title">Год: </div>
+                            <select name="proekt3.year" data-placeholder="Выберите год">
+                                <option></option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="zayavka_send"><a href="#box1" class="btn_f btn_next blocked">Далее</a></div>
+                </div>
+            </div>
+            <div class="block" id="block4" data-next='block5'>
+                <h3 class="">4. Планируемое распределение максимального часового расхода газа и сроки ввода объекта капитального строительства <i>(по этапам и очередям):</i></h3>
+                <div class="box_cont" style="display: none;">
+                    <div class="zcb_input_list zcb_in_32" data-block="plan1" data-title="Планируемое распределение максимального часового расхода газа и сроки ввода объекта капитального строительства: этап 1">
+                        <div class="zcb_in_inner">
+                            <div class="zcb_in_title">I этап:</div>
+                            <label>
+                                <input name="plan1.name" data-req="Y" type="text"/>
+                                <span class="zcb_m">м<sup>3</sup>/ч</span>
+                            </label>
+                        </div>
+                        <div class="zcb_in_inner">
+                            <div class="zcb_in_title">Месяц:</div>
+                            <select name="plan1.month" data-placeholder="Выберите месяц" data-req="Y">
+                                <option></option>
+                                <option value="1">Январь</option>
+                                <option value="2">Февраль</option>
+                                <option value="3">Март</option>
+                                <option value="4">Апрель</option>
+                                <option value="5">Май</option>
+                                <option value="6">Июнь</option>
+                                <option value="7">Июль</option>
+                                <option value="8">Август</option>
+                                <option value="9">Сентябрь</option>
+                                <option value="10">Октябрь</option>
+                                <option value="11">Ноябрь</option>
+                                <option value="12">Декабрь</option>
+                            </select>
+                        </div>
+                        <div class="zcb_in_inner">
+                            <div class="zcb_in_title">Год: </div>
+                            <select name="plan1.year" data-placeholder="Выберите год" data-req="Y">
+                                <option></option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="zcb_input_list zcb_in_32" data-block="plan2" data-title="Планируемое распределение максимального часового расхода газа и сроки ввода объекта капитального строительства: этап 2">
+                        <div class="zcb_in_inner"><div class="zcb_in_title">II этап:</div>
+                            <label>
+                                <input name="plan2.name" data-req="N" type="text">
+                                <span class="zcb_m">м<sup>3</sup>/ч</span>
+                            </label>
+                        </div>
+                        <div class="zcb_in_inner"><div class="zcb_in_title">Месяц:</div>
+                            <select name="plan2.month" data-placeholder="Выберите месяц">
+                                <option></option>
+                                <option value="1">Январь</option>
+                                <option value="2">Февраль</option>
+                                <option value="3">Март</option>
+                                <option value="4">Апрель</option>
+                                <option value="5">Май</option>
+                                <option value="6">Июнь</option>
+                                <option value="7">Июль</option>
+                                <option value="8">Август</option>
+                                <option value="9">Сентябрь</option>
+                                <option value="10">Октябрь</option>
+                                <option value="11">Ноябрь</option>
+                                <option value="12">Декабрь</option>
+                            </select>
+                        </div>
+                        <div class="zcb_in_inner"><div class="zcb_in_title">Год: </div>
+                            <select name="plan2.year" data-placeholder="Выберите год">
+                                <option></option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="zcb_input_list zcb_in_32" data-block="plan3" data-title="Планируемое распределение максимального часового расхода газа и сроки ввода объекта капитального строительства: этап 3">
+                        <div class="zcb_in_inner"><div class="zcb_in_title">III этап:</div>
+                            <label>
+                                <input name="plan3.name" data-req="N" type="text">
+                                <span class="zcb_m">м<sup>3</sup>/ч</span>
+                            </label>
+                        </div>
+                        <div class="zcb_in_inner"><div class="zcb_in_title">Месяц:</div>
+                            <select name="plan3.month" data-placeholder="Выберите месяц">
+                                <option></option>
+                                <option value="1">Январь</option>
+                                <option value="2">Февраль</option>
+                                <option value="3">Март</option>
+                                <option value="4">Апрель</option>
+                                <option value="5">Май</option>
+                                <option value="6">Июнь</option>
+                                <option value="7">Июль</option>
+                                <option value="8">Август</option>
+                                <option value="9">Сентябрь</option>
+                                <option value="10">Октябрь</option>
+                                <option value="11">Ноябрь</option>
+                                <option value="12">Декабрь</option>
+                            </select>
+                        </div>
+                        <div class="zcb_in_inner"><div class="zcb_in_title">Год: </div>
+                            <select name="plan3.year" data-placeholder="Выберите год">
+                                <option></option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="zc_block_inner">
+                        <div class="zcbi_name">Полученные раннее технические условия:</div>
+                        <div class="zcbi_check_list" data-block="almost" data-title="Полученные раннее технические условия">
+                            <div class="zcb_list_old">
+                                <div class="zcb_in_inner">
+                                    <div class="zcb_in_title">Номер</div>
+                                    <input type="text" name="almost.number" data-req="N"/>
+                                </div>
+                                <div class="zcb_in_inner">
+                                    <div class="zcb_in_title">Дата выдачи</div>
+                                    <input type="text" name="almost.data" data-req="N"/>
+                                </div>
+                            </div>
+                            <div class="zcb_in_inner">
+                                <div class="zcb_in_title">Правовые основания владения и (или) пользования земельным участком и(или) договор о
+                                    комплексном освоении территории (свидетельство о праве собственности, выписка из
+                                    единого реестра прав на недвижимое имущество, договор аренды, временного
+                                    пользования и т.д.)  </div>
+                                <input type="text" name="almost.right" data-req="N"/>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="zayavka_send"><a href="#box1" data-save="Y" class="btn_f btn_next blocked">Далее</a></div>
+                </div>
+            </div>
+            <div class="block" id="block5" data-next="send">
+                <h3 class="">ПРИЛОЖЕНИЯ К ЗАЯВКЕ</h3>
+                <div class="box_cont" style="display: none;">
+                    <div class="zayavka_pril">
+                        <div class="zp_header"><p><b>Внимание!</b> Прикрепляемые файлы должны быть в формате <br>«.pdf»,«.jpg» или «.tiff» размером не более 2 мегабайт.</p></div>
+                        <ul class="zayavka_pril_list" data-block="files">
+                            <li>
+                                <div class="zpl_text">
+                                    Заполненный и подписанный Заявителем бланк Заявки на предоставление технических условий 
+                                    <a class="download_file" target="_blank" href="/upload/blank">Скачать</a>
+                                </div>
+                                <div class="zpl_file">
+                                    <input type="file" data-req="Y" name="files.blank">
+                                    <div class="zpl_file_del"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="zpl_text">Документ, подтверждающий право собственности на объект капитального строительства и 
+                                    земельный участок, на котором он расположен (будет расположен);</div>
+                                <div class="zpl_file">
+                                    <input type="file" data-req="Y" name="files.tenure">
+                                    <div class="zpl_file_del"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="zpl_text">Ситуационный план расположения земельного участка с привязкой к
+                                    территории населенного пункта (Масштаб 1:500),в случае отсутствия распределительного 
+                                    газопровода на территории земельного участка Заявителя);</div>
+                                <div class="zpl_file">
+                                    <input type="file" data-req="Y" name="files.layout">
+                                    <div class="zpl_file_del"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="zpl_text">Согласие основного абонента на подключение (технологическое присоединение) 
+                                    к сетям газораспределения и (или) газопотребления основного абонента, а также строительство 
+                                    газопровода на земельном участке основного абонента, если подключение осуществляется 
+                                    на земельном участке, правообладателем которого является основной абонент;</div>
+                                <div class="zpl_file">
+                                    <input type="file" data-req="Y" name="files.accept">
+                                    <div class="zpl_file_del"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="zpl_text">Копия паспорта гражданина РФ (достаточно приложить лист с фото и пропиской);</div>
+                                <div class="zpl_file">
+                                    <input type="file" data-req="Y" name="files.passport">
+                                    <div class="zpl_file_del"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="zpl_text">Согласие на обработку персональных данных 
+                                    (предусмотреть возможность его предварительно скачать);<a class="download_file" target="_blank" href="/upload/accept">Скачать</a></div>
+                                <div class="zpl_file">
+                                    <input type="file" data-req="Y" name="files.consent">
+                                    <div class="zpl_file_del"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <p>В зависимости от Вашей конкретной ситуации, возможно, Вам необходимо предоставить копии следующих документов:</p>
+                                <p>
+                                    Доверенность или иные документы, подтверждающие полномочия представителя Заявителя (в случае если заявку подает представитель Заявителя). Доверенность, заверенная нотариально, предоставляется, если оригинал договора получает и (или) подписывает представитель Заявителя. Если Заявитель подаёт заявку сам, ничего присоединять не надо.
+                                </p>
+                                <p>Расчёт максимального часового расхода газа (не прилагается, если планируемый максимальный часовой расход газа не более 5 куб. метров).</p>
+                                <p>Акт о подключении (технологическом присоединении) объекта капитального строительства лица, которое уступает право на использование мощности, или иных документов, подтверждающих параметры его подключения (технологического присоединения), и заверенная сторонами копия заключенного соглашения об уступке права на использование мощности, а также документы, удостоверяющие размер снижения потребления газа (в случае предоставления технических условий при уступке права на использование мощности).</p>   
+                                <p>Заверенная в установленном порядке копия договора о пользовании объектами инфраструктуры и другим имуществом общего пользования некоммерческого объединения, предусмотренного Федеральным законом "О садоводческих, огороднических и дачных некоммерческих объединениях граждан" (в случае, если подключение осуществляется с использованием объектов инфраструктуры и другого имущества общего пользования указанного некоммерческого объединения).</p>
+                                <div class="zpl_file zpl_file-adv">
+                                    <input type="file" data-req="N" name="files.advantage" data-id="1">
+                                    <div class="zpl_file_del"></div>
+                                </div>
+                                <a class="add_file_input" href="#" title="Добвать файл">Еще файл</a>
+                            </li>
+                        </ul>                        
+                        <div class="zc_block_two">
+                            <div class="zcbi_name">Способ получения документов:</div>
+                            <div class="zbt_inner">
+                                <div class="pu_radio_list" data-block="ready" data-title="Способ получения документов">
+                                    <label><input type="radio" name="ready.type" value="person" data-title="person"><span>Лично</span></label>
+                                    <label><input type="radio" name="ready.type" value="post" data-title="post"><span>Почтой</span></label>
+                                </div>
+                            </div>
+                        </div>   
+                        <!--div class="zc_block_inner">
+                            <div class="zcbi_name">Способ получения документов:</div>
+                            <div class="zcbi_check_list" data-block="ready" data-title="Способ получения документов">
+                                <div class="cl_block">
+                                    <label class="zcb_check">
+                                        <input type="checkbox" name="ready.type" value="email"> <span>По электронной почте</span>
+                                    </label>
+                                    <input class="zcb_input" data-req="R" name="ready.email" type="text">
+                                </div>
+                                <div class="cl_block">
+                                    <label class="zcb_check">
+                                        <input type="checkbox" name="ready.type" value="mobile"> <span>По мобильному телефону</span>
+                                    </label>
+                                    <input class="zcb_input" data-req="R" name="ready.mobile" type="text">
+                                </div>
+                                <div class="cl_block">
+                                    <label class="zcb_check">
+                                        <input type="checkbox" name="ready.type" value="phone"> <span>По городскому телефону</span>
+                                    </label>
+                                    <input class="zcb_input" data-req="R" name="ready.phone" type="text">
+                                </div>
+                                <div class="cl_block">
+                                    <label class="zcb_check zcb_check_other">
+                                        <input type="checkbox" name="ready.type" value="other"> <span>Иное</span>
+                                    </label>
+                                    <input class="zcb_input" data-req="R" name="ready.other" type="text">
+                                </div>
+                            </div>
+                        </div-->
+                    </div>
+                    <p>Нажав кнопку "Отправить", я подтверждаю достоверность представленных данных и даю свое согласие на обработку моих персональных данных, 
+                        указанных в электронной заявке о подключении (технологическом присоединении), в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ 
+                        «О персональных данных» на условиях Соглашения на обработку персональных данных.
+                        Мне разъяснено, что в случае получения мотивированного отказа в выдаче технических условий 
+                        (заключении договора о подключении), я вправе обратиться в орган исполнительной власти 
+                        Алтаяского края, утвердившей программу газификации, 
+                        с предложением о включении в региональную программу газификации мероприятий 
+                        по обеспечению технической возможности подключения (технологического присоединения) 
+                        к сети газораспределения объекта капитального строительства с приложением копии запроса 
+                        о предоставлении технических условий (заявки о подключении) и отказа в выдаче технических условий 
+                        (заключении договора о подключении). Я также вправе обратиться к исполнителю (ООО «РусьЭнерго»), 
+                        с тем, чтобы исполнитель самостоятельно выполнил указанные выше действия. </p>
+                    <div class="zayavka_send">
+                        <input type="submit" class="btn_f btn_next blocked" value="ОТПРАВИТЬ ЗАЯВКУ"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

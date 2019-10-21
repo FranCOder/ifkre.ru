@@ -1,0 +1,133 @@
+/*fonts*/
+/*Segoe UI*/
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('/fonts/segoe_ui-webfont.eot');
+    src: url('/fonts/segoe_ui-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/segoe_ui-webfont.woff') format('woff'),
+         url('/fonts/segoe_ui-webfont.ttf') format('truetype'),
+         url('/fonts/segoe_ui-webfont.svg#segoe_uiregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('/fonts/segoe_ui_bold-webfont.eot');
+    src: url('/fonts/segoe_ui_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/segoe_ui_bold-webfont.woff') format('woff'),
+         url('/fonts/segoe_ui_bold-webfont.ttf') format('truetype'),
+         url('/fonts/segoe_ui_bold-webfont.svg#segoe_uibold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('/fonts/segoe_ui_italic-webfont.eot');
+    src: url('/fonts/segoe_ui_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/segoe_ui_italic-webfont.woff') format('woff'),
+         url('/fonts/segoe_ui_italic-webfont.ttf') format('truetype'),
+         url('/fonts/segoe_ui_italic-webfont.svg#segoe_uiitalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('/fonts/segoe_ui_semibold-webfont.eot');
+    src: url('/fonts/segoe_ui_semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/segoe_ui_semibold-webfont.woff') format('woff'),
+         url('/fonts/segoe_ui_semibold-webfont.ttf') format('truetype'),
+         url('/fonts/segoe_ui_semibold-webfont.svg#segoe_uisemibold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('/fonts/segoe_ui_light-webfont.eot');
+    src: url('/fonts/segoe_ui_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/segoe_ui_light-webfont.woff') format('woff'),
+         url('/fonts/segoe_ui_light-webfont.ttf') format('truetype'),
+         url('/fonts/segoe_ui_light-webfont.svg#segoe_uilight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PF Din Text Comp Pro';
+    src: url('/fonts/pfdintextcomppro-medium-webfont.eot');
+    src: url('/fonts/pfdintextcomppro-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/pfdintextcomppro-medium-webfont.woff2') format('woff2'),
+         url('/fonts/pfdintextcomppro-medium-webfont.woff') format('woff'),
+         url('/fonts/pfdintextcomppro-medium-webfont.svg#pf_din_text_comp_promedium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+/*Segoe UI end*/
+
+
+/*reset light*/
+html, body {
+    max-width: 920px;
+}
+body {
+    font-family: 'Segoe UI', sans-serif;
+    padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 34px;
+	padding-bottom: 84px;
+}
+a {
+    color:#1E84C7;
+}
+a:hover {
+    text-decoration: none;
+}
+img, a {
+    outline-style: none;
+}
+
+
+
+.eq-row {
+    clear:both;
+    width:100%;
+    border:1px dotted silver;
+    margin-bottom:20px;
+}
+.eq-row::before, .eq-row::after {
+    display: table;
+    content: " ";
+    clear:both;
+}
+.eq-img {
+    width:49%;
+    float:left;
+    text-align: center;
+    border:1px dotted silver;
+}
+.eq-img img {
+    width:90%;
+}
+.eq-info {
+    width:49%;
+    float:right;
+    border:1px dotted silver;
+}
+.eq-info h2 {
+    font-size: 22px;
+}
+.eq-info .eq-price {
+    display: block;
+    width:100%;
+    text-align:right;
+    font-weight: bold;
+    font-size: 18px;
+}

@@ -1,0 +1,63 @@
+<div class="doc_content">
+    <div class="wmain">
+        <div class="personal-info">
+            <h1>{{ @SESSION.esia.user.firstName }} {{ @SESSION.esia.user.middleName }} {{ @SESSION.esia.user.lastName }}</h1>
+            <a href="/fl/gaz/tp/zayavka" class="label label-primary">Подать заявку</a>
+            <p></p>
+            <check if="{{ !empty(@dogovors) AND !empty(@kontragents) }}">
+                <check if="{{ !empty(@zayavki) }}">
+                    <repeat group="@zayavki" value="@zayavka">
+                        <check if="{{ @zayavka.status == 0 }}">
+                            <true>
+                                <p><strong>Статус заявки №{{ @zayavka.id }}:</strong> <span class="label label-warning">На рассмотрении</span></p>
+                            </true>
+                            <false>
+                                <p><strong>Статус заявки №{{ @zayavka.id }}:</strong> <span class="label label-success">Выполнено</span></p>
+                            </false>
+                        </check>
+                    </repeat>
+                </check>
+                <repeat group="@kontragents" value="@kontragent">
+                    <repeat group="@dogovors" value="@dogovor">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Лицевой счет №: {{ @dogovor.kontragent_id }}</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p><strong>Серия и номер паспорта:</strong> {{@SESSION.esia.user.documents.elements.0.series}} {{ @SESSION.esia.user.documents.elements.0.number }}</p>
+                                <p><strong>Фактический адрес:</strong> {{ @kontragent.AdressFakt }}</p>
+                                <p><strong>Юридический адрес:</strong> {{ @kontragent.AdressYur }}</p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th align="left">Долг за ТО ВДГО</th>
+                                            <th align="left">Долг газопровода</th>
+                                        </tr>
+                                        <tr>
+                                            <check if="{{ is_numeric(preg_replace('/\s+/', '', str_replace(',', '.', @dogovor.DolgKotla))) }}">
+                                                <true>
+                                                    <td>{{ @dogovor.DolgKotla }} руб.</td>
+                                                </true>
+                                                <false>
+                                                    <td>Задолженность отсутствует</td>
+                                                </false>
+                                            </check>
+                                            <check if="{{ is_numeric(preg_replace('/\s+/', '', str_replace(',', '.', @dogovor.DolgGazaprovod))) }}">
+                                                <true>
+                                                    <td>{{ @dogovor.DolgGazaprovod }} руб.</td>
+                                                </true>
+                                                <false>
+                                                    <td>Задолженность отсутствует</td>
+                                                </false>
+                                            </check>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </repeat>
+                </repeat>
+            </check>
+        </div>
+    </div>
+</div>

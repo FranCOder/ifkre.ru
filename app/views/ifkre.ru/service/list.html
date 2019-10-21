@@ -1,0 +1,5 @@
+<check if="!empty(@services)">
+<repeat group="@services" value="@list_node">
+<include href="{{ @site['tpl'].'/service/one.html' }}" with="node=@list_node"/>
+</repeat>
+</check>

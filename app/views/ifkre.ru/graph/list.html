@@ -1,0 +1,26 @@
+<check if="{{ !empty(@list) && is_array(@list) }}">
+    <true>
+    <ul class="gc_list">
+        <repeat group="{{@list}}" key="{{ @litera }}" value="{{ @array }}">
+            <li class="gc_litera" data-litera="{{ @litera}}">
+                <div class="gcl_title"><span>{{ @litera }}</span></div>
+                <ul class="gc_list_inner">
+                    <li>
+                        <ul>
+                            <repeat group="{{ @array }}" value="{{ @item }}">
+                                <li class="gc_list_item" data-name="{{ @item.title }}" data-litera="{{ @litera }}">
+                                    <div class="gcl_data">{{ @item.date }}</div>
+                                    <div class="gcl_str">{{ @item.title }}</div>
+                                </li>
+                            </repeat>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </repeat>
+    </ul>
+    </true>
+    <false>
+    <p>Ничего не найдено</p>
+    </false>
+</check>

@@ -1,0 +1,22 @@
+<ul class="ia_info_list">
+<li>
+<div class="iil_img">
+<img src="/assets/app/i/about_ico1.png" alt="{{ date('Y') - 2007 }} лет на рынке">
+<div class="iil_year"><div class="iil_year_inner">{{ date('Y') - 2007 }}<i>лет</i></div></div>
+</div>
+<span>на рынке</span>
+</li>
+<check if="{{ !empty(@list) }}">
+<repeat group="{{ @list }}" value="{{ @list_node }}">
+<check if="{{ @list_node.obj_af_ico->exists() }}">
+<li>
+<div class="iil_img">
+<img src="{{ @list_node.obj_af_ico->src() }}" alt="{{ @list_node.title }} {{ @list_node.af_val }}">
+<div class="iil_num"><div class="iil_num_inner">{{ @list_node.af_val }}</div></div>
+</div>
+<span>{{ @list_node.title }}</span>
+</li>
+</check>
+</repeat>
+</check>
+</ul>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="{{ @i18n.locale }}" ng-app="calcApp">
+<head>
+<include href="system/blocks/meta.html"/>
+<include href="{{ @site['tpl'].'/blocks/head-libs.html' }}"/>
+</head>
+
+<body>
+<check if="{{ !empty(@html.settings.metrika) }}">{{ @html.settings.metrika | raw }}</check>
+<!--[if lt IE 8]>
+<p class="chromeframe">Вы используете <strong>устаревший</strong> браузер. Пожалуйста, <a href="http://browsehappy.com/">обновите его</a> или <a href="http://www.google.com/chromeframe/?redirect=true">активируйте Google Chrome Frame</a>.</p>
+<![endif]-->
+<!-- begin container_main  -->
+<div class="container_main">
+<include href="{{ @site['tpl'].'/blocks/header.html' }}"/>
+
+<include href="{{ @site['tpl'].'/pages/'.@page_layout.'.html' }}"/>
+<include href="{{ @site['tpl'].'/blocks/footer.html' }}"/>
+<include href="{{ @site['tpl'].'/blocks/popup.html' }}"/>
+</body>
+<include href="{{ @site['tpl'].'/blocks/scripts.html' }}"/>
+<check if="{{ !empty(@html.settings.jivosite) }}">{{ @html.settings.jivosite | raw }}</check>
+</html>

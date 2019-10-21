@@ -1,0 +1,16 @@
+<div class="head_inner">
+    <div class="wmain">
+        <include href="{{ @site['tpl'].'/blocks/breadcrumbs.html' }}"/>
+        <h1>{{ @html.page_title }} 
+            <check if="{{ @html.page_title_add }}"><span>{{ @html.page_title_add }}</span>
+            </check>
+        </h1>
+        <include href="{{ @site['tpl'].'/blocks/htmlpage-childs.html' }}" />
+    </div>
+</div>
+<div class="doc_content">
+<check if="{{ !empty(@content) }}">
+        <div class="wmain">{{ @content | raw }}</div>
+</check>
+<include if="{{ isset(@html.inc) }}" href="{{ @html.inc }}" />
+</div>

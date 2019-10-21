@@ -1,0 +1,8 @@
+<div id="service_buttons{{ @node.id }}" class="service_buttons">
+<ul class="connect_head_btn_list">
+<check if="!empty(@node.buttons.online)"><li><a class="chb_ico1" href="{{ @node.buttons.online }}">Онлайн-заявка</a></li></check>
+<check if="!empty(@node.buttons.email)"><li><a class="chb_ico2" href="{{ @node.buttons.email }}">По электронной почте</a></li></check>
+<check if="!empty(@node.buttons.office)"><li><a class="chb_ico3" href="{{ @node.buttons.office }}">В офисе</a></li></check>
+<check if="!empty(@node.buttons.post)"><li><a class="chb_ico4" href="{{ @node.buttons.post }}">Почта</a></li></check>
+</ul>
+</div>

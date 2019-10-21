@@ -1,0 +1,12 @@
+<check if="{{ !empty(@list) }}">
+<div class="logo_list">
+<div class="ll_title"><b>РусьЭнерго</b> &mdash; авторизированный сервисный центр<span>Осуществляем сервисное обслуживание газового оборудования компаний:</span></div> 
+<div class="logo_slider">
+<repeat group="{{ @list }}" value="{{ @list_node }}">
+<check if="{{ @list_node.obj_af_logo->exists() }}">
+<div><div class="ls_inner"><span>{*<a href="#">*}<img src="{{ @list_node.obj_af_logo->src() }}" alt="{{ @list_node.title }}">{*</a>*}</span></div></div>
+</check>
+</repeat>
+</div>
+</div>
+</check>

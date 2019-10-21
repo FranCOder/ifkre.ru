@@ -1,0 +1,11 @@
+<!-- begin index_about  -->
+<div class="index_about">
+    <div class="wmain">
+        <div class="ia_title">о компании русьэнерго</div>
+        <div class="ia_text">
+            {{ @content | raw }}
+        </div>
+    </div>
+    <include href="{{ @site['tpl'].'/advantage/list.html' }}" with="list={{ @list_advantage }}"/>
+</div>
+<!-- end index_about -->

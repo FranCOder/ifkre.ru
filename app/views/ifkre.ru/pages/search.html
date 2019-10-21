@@ -1,0 +1,18 @@
+<div class="head_inner"><div class="wmain">
+<include href="{{ @site['tpl'].'/blocks/breadcrumbs.html' }}"/>
+<h1>{{ @html.page_title }}<check if="{{ !empty(@html.search_query) }}"><span>фраза &laquo;{{ @html.search_query }}&raquo;</span></check></h1>
+</div></div>
+<div class="doc_content"><div class="wmain">
+<check if="{{ !empty(@html.search_results) }}">
+    <true>
+    <ol>
+        <repeat group="{{ @html.search_results }}" key="{{ @href }}" value="{{ @link }}" >
+            <li>{{ @link['title'] }}: <a href="{{ @href }}" target="_blank">{{ @link['anchor'] | raw }}</a></li>
+        </repeat>
+    </ol>
+    </true>
+    <false>
+    <p>К сожалению, ничего не найдено. Попробуйте переформулировать запрос.</p>
+    </false>
+</check>
+</div></div>

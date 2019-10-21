@@ -1,0 +1,19 @@
+<div class="doc_content">
+    <div class="wmain">
+        <!-- Start Login Register Content -->
+                <div class="login_form">
+                    <!-- Start Single Content -->
+                        <form class="login" method="post" action="{{ 'login_post' | alias }}">
+                            <input placeholder="email" name="email" type="text">
+                            <input placeholder="пароль" name="password" type="password">
+                            <div class="htc__login__btn mt--30">
+                                <button class="login_btn"  name="login" type="submit">Войти</button>
+                            </div>
+                        </form>
+                        <div class="tabs__checkbox">
+                            <span class="forget"><a href="{{ 'restore_get' | alias }}">Забыли пароль?</a></span>
+                        </div>
+                    <!-- End Single Content -->
+                </div>
+    </div>
+</div>

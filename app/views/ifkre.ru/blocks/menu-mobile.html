@@ -1,0 +1,25 @@
+<ul class="mm_list">
+<li>
+<set mid="1"/>
+<repeat group="{{ @MENUS.footer }}" key="{{ @href }}" value="{{ @anchor }}">
+    <check if="empty(@anchor.subpages)">
+<true><a href="{{ @href }}">{{ isset(@anchor.text) ? @anchor.text : '' }}</a></true>
+<false>
+<a data-id="#nm{{ @mid }}" class="nm_open" href="{{ @href }}">{{ isset(@anchor.text) ? @anchor.text : '' }}</a>
+<set mid="{{ @mid+1 }}"/>
+</false>
+    </check>
+</repeat>
+</li>
+<set mid="1"/>
+<repeat group="{{ @MENUS.footer }}" key="{{ @href }}" value="{{ @anchor }}">
+<check if="!empty(@anchor.subpages)">
+    <li class="mm_inner" id="nm{{@mid}}" style="display:none;">
+<repeat group="{{ @anchor.subpages }}" key="{{ @href2 }}" value="{{ @anchor2 }}">
+        <a href="{{ @href2 }}">{{ @anchor2 }}</a>
+</repeat>
+    </li>
+<set mid="{{ @mid+1 }}"/>
+</check>
+</repeat>
+</ul>

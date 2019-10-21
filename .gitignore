@@ -1,0 +1,11 @@
+/vendor/
+/tmp/
+/logs/
+/ifkre.ru/uploads/
+/ifkre.ru/source/
+/ifkre.ru/thumbs/
+/.idea/
+ifkre.ru/compressed
+ifkre.ru/assets
+.env
+.idea

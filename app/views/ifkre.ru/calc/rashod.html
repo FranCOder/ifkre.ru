@@ -1,0 +1,63 @@
+<!-- pu -->
+<div id="pu_calc" style="display: none;" class="pu_inner pu_calc">
+    <a class="closeform" href="#"></a>
+    <div class="pu_title">
+        <b>калькулятор</b>
+        Расчет максимального часового расхода газа
+    </div>
+    <form class="pu_calc_form">
+        <ul class="pu_calc_form_list">
+            <li>
+                <div class="pcfl_title">
+                    Расчет на основе
+                </div>
+                <div class="pu_radio_list">
+                    <label>
+                        <input checked="" type="radio" name="r1">
+                        <span>Площади</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="r1">
+                        <span>Теплопроизводительности оборудования</span>
+                    </label>
+                </div>
+                <div class="pu_in_list">
+                    <label><span>Площадь, м<sup>2</sup></span> <input type="text"></label>
+                    <label><span>Теплопроизоводительность, кВт/ч</span> <input type="text"></label>
+                    <label><span>Часовой расход для пищеприготовления</span> <input type="text"></label>
+                </div>
+            </li>
+            <li>
+                <div class="pcfl_title">
+                    Использование газовых приборов для
+                </div>
+                <div class="pu_radio_list">
+                    <label>
+                        <input checked="" type="radio" name="r2">
+                        <span>Отопления</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="r2">
+                        <span>Горячего водоснабжения</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="r2">
+                        <span>Пищеприготовления</span>
+                    </label>
+                </div>
+            </li>
+        </ul>
+        <div class="pu_btn_calc">
+            <button>РАСЧИТАТЬ</button>
+        </div>
+        <div class="pu_calc_result">
+            <div class="pcr_name">
+                Ваш планируемый максимальный часовой расход газа
+            </div>
+            <div class="pcr_num">78</div>
+            <div class="pcr_mc">
+                м<sup>3</sup>/ч
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+<div class="head_inner">
+    <div class="wmain">
+        <include href="{{ @site['tpl'].'/blocks/breadcrumbs.html' }}"/>
+        <h1>{{ @html.page_title }} 
+            <check if="{{ @html.page_title_add }}"><span>{{ @html.page_title_add }}</span>
+            </check>
+        </h1>
+        <div class="hi_graph">
+            <form class="hi_search" method="GET">
+                <input name="search" type="text" value="{{ !empty(@GET.search)?@GET.search:'Название улицы' }}" data="Название улицы">
+                <button class="hi_search_btn"></button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- end head_inner -->
+<!-- begin graph_content  -->
+<div class="graph_content">
+    <div class="wmain" id="graph_list">
+        <include href="{{ @site.tpl.'/graph/list.html' }}"/>
+    </div>
+</div>

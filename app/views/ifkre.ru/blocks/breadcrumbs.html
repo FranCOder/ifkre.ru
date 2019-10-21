@@ -1,0 +1,6 @@
+<check if="{{ isset(@breadcrumbs) && (!empty(@breadcrumbs.path) || !empty(@breadcrumbs.active)) }}">
+<p><repeat group="{{ @breadcrumbs.path }}" value="{{ @title }}" key="{{ @href }}">
+<a href="{{ @href }}">{{ @title }}</a> \ 
+</repeat>
+<strong>{{ @breadcrumbs.active }}</strong>
+</p></check>

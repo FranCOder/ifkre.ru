@@ -1,0 +1,58 @@
+<div class="wmain">
+<check if="{{ !empty(@node.af_calc) || !empty(@node.buttons) }}">
+<ul class="connect_head_btn_list">
+    <check if="!empty(@node.af_calc)"><li><a class="calc_ico1" href="{{ @node.af_calc }}">Расчёт стоимости</a></li></check>
+    <check if="!empty(@node.buttons)"><li><a class="show_buttons chb_ico1" data-buttons="service_buttons{{ @node.id }}" href="#">Подать заявку</a></li></check>
+</ul>
+</check>
+<include if="!empty(@node.buttons)" href="{{ @site['tpl'].'/service/buttons.html' }}" />    
+</div>
+
+<div class="connect_info"><div class="wmain">
+
+<check if="{{ !empty(@node.af_about) }}">{{ @node.af_about | raw }}</check>
+{*<check if="!empty(@node.steps.0.af_link)"><p><a class="step_btn" href="{{ @node.steps.0.af_link }}">{{ !empty(@node.steps.0.af_link_text)?@node.steps.0.af_link_text:'Перейти' }}</a></p></check>*}
+<div id="#connect_accordion" class="connect_accordion">
+
+<check if="!empty(@node.steps)">
+<h3 class="ca_ico1"><span>Порядок получения услуги</span></h3>
+<div class="ca_block"><div class="connect_accordion_content">
+<ul><repeat group="@node.steps" value="@step" counter="@num">
+<h2>Шаг {{ @num }}. {{ @step.title }}</h2>
+<p>{{ nl2br(@step.af_about) | raw }}</p>
+<check if="!empty(@step.af_link)"><p><a class="step_btn" href="{{ @step.af_link }}">{{ !empty(@step.af_link_text)?@step.af_link_text:'Перейти' }}</a></p></check>
+</repeat></ul>
+</div></div>
+</check>
+            
+<check if="!empty(@node.docs)">
+<h3 class="ca_ico2"><span>Необходимые документы</span></h3>
+<div class="ca_block"><div class="connect_accordion_content">
+<ul><repeat group="@node.docs" value="@doc" counter="@num">
+<li>{{ @doc.title }}</li>
+</repeat></ul>
+</div></div>
+</check>
+<check if="!empty(@node.legal)">
+<h3 class="ca_ico2"><span>Нормативные документы</span></h3>
+<div class="ca_block"><div class="connect_accordion_content">
+<ul><repeat group="@node.legal" value="@doc" counter="@num">
+<li><a href="{{ @doc.af_link }}" target="_blank">{{ @doc.title }}</a></li>
+</repeat></ul>
+</div></div>
+</check>
+<check if="!empty(@node.references)">
+<h3 class="ca_ico2"><span>Справочная информация</span></h3>
+<div class="ca_block"><div class="connect_accordion_content">
+<ul><repeat group="@node.references" value="@doc" counter="@num">
+<check if="!empty(@doc.af_file)">
+<true><li><a href="{{ 'file_download', 'type=reference,field=af_file,id='.@doc['id'].',ext='.@doc['af_file'] | alias }}" target="_blank">{{ @doc.title }}</a></li></true>
+<false><check if="!empty(@doc.af_link)"><li><a href="{{ @doc.af_link }}">{{ @doc.title }}</a></li></check></false>
+</check>
+</repeat></ul>
+</div></div>
+</check>
+
+</div>
+
+</div></div>

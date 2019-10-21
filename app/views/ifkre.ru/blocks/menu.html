@@ -1,0 +1,12 @@
+<div class="menu"><ul>
+<repeat group="{{ @MENUS.main }}" key="{{ @href }}" value="{{ @anchor }}">
+<li><a href="{{ @href }}" {{ @anchor.active ? 'class="active"' : '' }}>{{ isset(@anchor.text) ? @anchor.text : '' }}</a></li>
+</repeat>
+</ul><div class="clear_fix"></div></div>
+<div class="menu-collapsed"><div class="bar"></div>
+<nav><ul>
+<repeat group="{{ @MENUS.main }}" key="{{ @href }}" value="{{ @anchor }}">
+<li><a href="{{ @href }}" {{ @anchor.active ? 'class="active"' : '' }}>{{ isset(@anchor.text) ? @anchor.text : '' }}</a></li>
+</repeat>
+</ul></nav>
+</div>

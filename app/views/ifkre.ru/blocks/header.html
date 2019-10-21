@@ -1,0 +1,58 @@
+<!-- begin header  -->
+<div class="header">
+    <div class="nav_mobile_ico">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div style="display: none;" class="mobile_menu_plashka">
+        <include href="{{ @site.tpl.'/blocks/menu-mobile.html' }}"/>
+        <form class="head_search" action="{{ 'search' | alias }}">
+            <input type="text" name="q" placeholder="Поисковый запрос">
+            <button class="hs_btn">ИСКАТЬ</button>
+        </form>
+    </div>
+    <div class="wmain">
+        <div class="head_left">
+            <a class="logo" href="/"><img src="/i/logo.png" width="264" height="155" alt="{{ @i18n.site.name }}"></a>
+            <p>Cпециализированная газораспределительная организация</p>
+        </div>
+        <div class="head_right">
+            <div class="user">
+                <check if="isset(@SESSION.esia.user)">
+                    <true>
+                        <div class="login">
+                            <p><a href="{{ 'frontend_profile' | alias }}">{{ @SESSION.esia.user.firstName }} {{ @SESSION.esia.user.middleName }} {{ @SESSION.esia.user.lastName }}</a></p>
+                            <a href="{{ 'esia_logout' | alias }}" class="hs_btn">Выйти</a>
+                        </div>
+                    </true>
+                    <false>
+                        <div class="logout">
+                            <a class="hs_btn" href="{{ @esia }}" style="width:auto;padding:0 10px;">Войти через портал госуслуги</a>
+                        </div>
+                    </false>
+                </check>
+            </div>
+            <form class="head_search" action="{{ 'search' | alias }}">
+                <input type="text" name="q" placeholder="Поисковый запрос">
+                <button class="hs_btn">ИСКАТЬ</button>
+            </form>
+            <div class="head_contect">
+                <ul class="hc_str">
+                    <li><b>Время работы</b> {{ nl2br(@html.settings.rezhim) }}</li>
+                    <li><b>адрес</b> {{ @html.settings.adres }}</li>
+                </ul>
+                <ul class="hc_phone">
+                    <li><b>АВАРИЙНАЯ СЛУЖБА</b><a href="tel:{{ preg_replace('/[ \-\(\)\+]/','',@html.settings.tel_as) }}">{{ @html.settings.tel_as }}</a></li>
+                    <li><b>АБОНЕНТСКИЙ ОТДЕЛ</b><a href="tel:{{ preg_replace('/[ \-\(\)\+]/','',@html.settings.tel_ao) }}">{{ @html.settings.tel_ao }}</a></li>
+                </ul>
+            </div>
+        </div>
+        <ul class="head_nav">
+            <repeat group="{{ @MENUS.main }}" key="{{ @href }}" value="{{ @item }}">
+                <li><a href="{{ @href }}">{{ @item.text }}</a></li>
+            </repeat>
+        </ul>
+    </div>
+</div>
+<!-- end header -->

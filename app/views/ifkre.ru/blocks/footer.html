@@ -1,0 +1,28 @@
+<div class="footer"><div class="wmain">
+
+<div class="f_left"><ul class="f_nav">
+<repeat group="{{ @MENUS.footer }}" key="{{ @href }}" value="{{ @item }}" counter="{{ @cnt }}">
+<li><div class="fn_title">{{ @item.text }}</div>
+<repeat group="{{ @item.subpages }}" key="{{ @link }}" value="{{ @anchor }}">
+<a href="{{ @link }}">{{ @anchor }}</a>
+</repeat></li>
+<check if="{{ @cnt%3==0}}"></ul><ul class="f_nav f_nav2"></check>
+</repeat>
+</ul></div>
+
+<div class="f_right"><div class="fr_title">контакты</div>
+<ul class="fr_contact">
+<li><div class="fr_phone_top">АВАРИЙНАЯ СЛУЖБА <a href="tel:{{ preg_replace('/[ \-\(\)\+]/','',@html.settings.tel_as) }}">{{ @html.settings.tel_as }}</a></div></li>
+<li><div class="fr_phone_top">АБОНЕНТСКИЙ ОТДЕЛ <a href="tel:{{ preg_replace('/[ \-\(\)\+]/','',@html.settings.tel_ao) }}">{{ @html.settings.tel_ao }}</a></div></li>
+<li><div class="fr_phone2"><b>тел.:</b> <a href="tel:{{ preg_replace('/[ \-\(\)\+]/','',@html.settings.tel) }}">{{ @html.settings.tel }}</a>,</div></li>
+<li><div class="fr_phone2"><b>факс:</b> <a href="tel:{{ preg_replace('/[ \-\(\)\+]/','',@html.settings.fax) }}">{{ @html.settings.fax }}</a></div></li>
+<li><div class="fr_time"><b>Время работы</b><br> {{ @html.settings.rezhim }}</div></li>
+<li><div class="fr_time"><b>адрес </b><br>{{ @html.settings.adres }}</div></li>
+<li><div class="fr_mail"><b>Общий e-mail:</b> <a href="mailto:{{ @html.settings.mail }}">{{ @html.settings.mail }}</a></div></li>
+<check if="{{ !empty(@html.settings.map) }}"><li><a class="f_map" href="{{ @html.settings.map }}" data-fancybox-type="iframe"><span>Показать на карте</span></a></li></check>
+</ul>
+</div><div class="clr"></div>
+
+<div class="fl_bottom"><a class="f_logo" href="/"><img src="/i/f_logo.png"></a><div class="f_copy">РусьЭнерго, {{ date('Y') }}</div><a class="f_create" href="http://bigsiter.ru" target="_blank">Разработано в BigSiter</a></div>
+
+</div></div>

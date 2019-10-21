@@ -1,0 +1,23 @@
+<check if="!empty(@tabs)">
+<div class="tech_connect">
+    <div class="wmain">
+        <div class="tabs tech_tabs">
+<ul class="tabs_nav"><repeat group="@tabs" value="@tab" counter="@tab_cnt">
+<li{{ @tab_cnt==1?' class="ui-tabs-active"':'' }}><a href="#tabs-{{ @tab_cnt }}">{{ @tab.title }}</a></li>
+</repeat></ul>
+            
+<repeat group="@tabs" value="@tab" counter="@tab_cnt">
+<div id="tabs-{{ @tab_cnt }}"{{ @tab_cnt>1?' style="display: none;"':'' }}><div class="tech_tabs_content">
+<check if="!empty(@tab.blocks)"><ul class="tech_tabs_content_list"><repeat group="@tab.blocks" value="@block">
+<li><div class="ttcl_title">{{ @block.title }}</div><div class="ttcl_href">
+<check if="!empty(@block.links)"><repeat group="@block.links" value="@link">
+<a class="ttc_btn" href="{{ @link.af_link }}">{{ @link.title }}</a>        
+</repeat></check>
+</div></li>
+</repeat></ul></check>
+</div></div>
+</repeat>
+        </div>
+    </div>
+</div>
+</check>

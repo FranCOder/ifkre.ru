@@ -1,0 +1,5 @@
+{*<div class="date">
+	{{ date('j',strtotime(@node.af_date)) }} {{ \helpers\Date::MonthName(@node.af_date) }} {{ date('Y',strtotime(@node.af_date)) }}
+</div> *}
+{{ @node.af_descr | raw }}
+{*<include href="default/content/items.html" />*}

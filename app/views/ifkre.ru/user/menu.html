@@ -1,0 +1,53 @@
+<li class="header">Главная страница</li>
+<include if="isset(@MENUS.account.content.main_menu_tab)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.main_menu_tab"/>
+{*
+<include href="admin/menu/menu_item.html" with="item=@MENUS.account.content.main_menu_tab_block"/>
+<include href="admin/menu/menu_item.html" with="item=@MENUS.account.content.main_menu_link"/>
+*}
+<include if="isset(@MENUS.account.content.advantage)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.advantage"/>
+<include if="isset(@MENUS.account.content.banner)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.banner"/>
+<include if="isset(@MENUS.account.content.banner_style)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.banner_style"/>
+<include if="isset(@MENUS.account.content.brand)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.brand"/>
+<li class="header">Сайт</li>
+<include if="isset(@MENUS.account.content.htmlpage)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.htmlpage"/>
+<include if="isset(@MENUS.account.content.settings)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.settings"/>
+<li class="header">Графики ВДГО</li>
+<include if="isset(@MENUS.account.content.graph)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.graph"/>
+<li><a href="{{ 'app_backend_graph_upload' | alias }}"><i class="glyphicon glyphicon-upload"></i> <span>Обновить график ВДГО</span></a></li>
+<li class="header">Заявки</li>
+<include if="isset(@MENUS.account.content.order)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.order"/>
+<li class="header">Калькулятор</li>
+<include if="isset(@MENUS.account.content.calc_calc)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.calc_calc"/>
+<include if="isset(@MENUS.account.content.calc_const)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.calc_const"/>
+<include if="isset(@MENUS.account.content.calc_option)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.calc_option"/>
+<li class="header">Услуги</li>
+<include if="isset(@MENUS.account.content.service)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.service"/>
+<include if="isset(@MENUS.account.content.service_doc)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.service_doc"/>
+<include if="isset(@MENUS.account.content.service_step)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.service_step"/>
+<include if="isset(@MENUS.account.content.reference)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.reference"/>
+<include if="isset(@MENUS.account.content.doc)" href="admin/menu/menu_item.html" with="item=@MENUS.account.content.doc"/>
+{~
+unset(@MENUS.account.0);
+unset(@MENUS.account.content.htmlpage);
+unset(@MENUS.account.content.main_menu_tab);
+unset(@MENUS.account.content.main_menu_tab_block);
+unset(@MENUS.account.content.main_menu_link);
+unset(@MENUS.account.content.settings);
+unset(@MENUS.account.content.advantage);
+unset(@MENUS.account.content.banner);
+unset(@MENUS.account.content.banner_style);
+unset(@MENUS.account.content.brand);
+unset(@MENUS.account.content.doc);
+unset(@MENUS.account.content.reference);
+unset(@MENUS.account.content.graph);
+unset(@MENUS.account.content.order);
+unset(@MENUS.account.content.calc_calc);
+unset(@MENUS.account.content.calc_const);
+unset(@MENUS.account.content.calc_option);
+unset(@MENUS.account.content.service);
+unset(@MENUS.account.content.service_doc);
+unset(@MENUS.account.content.service_step);
+//echo '<pre>';print_r(@MENUS);echo '</pre>';
+~}
+<li class="dropdown-header"></li>
+<include href="admin/menu/menu_items.html"/>

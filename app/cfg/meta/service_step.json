@@ -1,0 +1,238 @@
+{
+    "namespace": "service_step",
+    "acl": "service_step",
+    "aliases": {
+        "list": "backend_content_list",
+        "list_page": "backend_content_list_page",
+        "create": "backend_content_create",
+        "create_sync": "backend_content_create_sync",
+        "copy": "backend_content_copy",
+        "delete": "backend_content_delete",
+        "edit": "backend_content_edit",
+        "edit_modal": "backend_content_edit_modal",
+        "update": "backend_content_update",
+        "value": "backend_content_value",
+        "point_value": "backend_content_point_value",
+        "labels": "backend_content_labels",
+        "moderation": "backend_content_moderation",
+        "moderation_controls": "backend_content_moderation_controls",
+        "sort": "backend_content_sort",
+        "move": "backend_content_move",
+        "tree_json": "backend_content_tree_json",
+        "upload": "backend_content_upload"
+    },
+    "items_aliases": {
+        "create": "backend_content_item_create",
+        "delete": "backend_content_item_delete",
+        "update": "backend_content_item_update",
+        "sort": "backend_content_item_sort",
+        "value": "backend_content_item_value",
+        "upload": "backend_content_item_upload",
+        "uploader_post": "backend_content_item_uploader_post",
+        "one": "backend_content_item_one"
+    },
+    "view": {
+        "list_fields": "admin\/content\/fields_in_list.html",
+        "list_item_actions": "admin\/content\/list_item_actions.html",
+        "list": "admin\/content\/list.html",
+        "list_header": "admin\/content\/head.html",
+        "list_footer": "admin\/content\/footer.html",
+        "list_form": "admin\/content\/list_form.html",
+        "list_item": "admin\/content\/list_item.html",
+        "list_empty": "admin\/content\/list_empty.html",
+        "one": null,
+        "form": "admin\/content\/form.html",
+        "edit": "admin\/content\/edit.html",
+        "edit_modal": "admin\/content\/edit_modal.html",
+        "edit_item": "system\/content\/item\/list_item.html",
+        "labels": "system\/content\/labels.html",
+        "moderation_controls": "system\/content\/moderation.html",
+        "hide_node_link": true,
+        "perpage": 10,
+        "icon": "fa fa-list fa-fw",
+        "form_struct": null
+    },
+    "fields_in_list": [],
+    "texts": {
+        "ru": {
+            "title": "Этап получения услуги",
+            "title_pl": "Услуги (этапы)",
+            "form_instruction": null,
+            "items_title": "",
+            "items_instruction": ""
+        }
+    },
+    "items": [],
+    "fields": {
+        "id": {
+            "is_additional": false,
+            "foreign_key": false,
+            "name": "id",
+            "fullname": "id",
+            "type": null,
+            "data_type": "int(11)"
+        },
+        "user_id": {
+            "is_additional": false,
+            "foreign_key": false,
+            "name": "user_id",
+            "fullname": "user_id",
+            "type": null,
+            "data_type": "int(11)"
+        },
+        "title": {
+            "is_additional": false,
+            "foreign_key": false,
+            "name": "title",
+            "fullname": "title",
+            "type": "text",
+            "data_type": "varchar(255)",
+            "texts": {
+                "ru": {
+                    "label": "Заголовок",
+                    "placeholder": ""
+                }
+            }
+        },
+        "sort": {
+            "is_additional": false,
+            "foreign_key": false,
+            "name": "sort",
+            "fullname": "sort",
+            "type": null,
+            "data_type": "int(11)",
+            "texts": {
+                "ru": {
+                    "label": "sort",
+                    "placeholder": ""
+                }
+            }
+        },
+        "created": {
+            "is_additional": false,
+            "foreign_key": false,
+            "name": "created",
+            "fullname": "created",
+            "type": null,
+            "data_type": "timestamp"
+        },
+        "deleted": {
+            "is_additional": false,
+            "foreign_key": false,
+            "name": "deleted",
+            "fullname": "deleted",
+            "type": null,
+            "data_type": "tinyint(1)"
+        },
+        "edited": {
+            "is_additional": false,
+            "foreign_key": false,
+            "name": "edited",
+            "fullname": "edited",
+            "type": null,
+            "data_type": "tinyint(1)",
+            "texts": {
+                "ru": {
+                    "label": "edited"
+                }
+            }
+        },
+        "published": {
+            "is_additional": false,
+            "foreign_key": false,
+            "name": "published",
+            "fullname": "published",
+            "type": "checkbox",
+            "data_type": "tinyint(1)",
+            "texts": {
+                "ru": {
+                    "label": "Показывать посетителям или нет",
+                    "placeholder": ""
+                }
+            }
+        },
+        "af_about": {
+            "is_additional": true,
+            "foreign_key": false,
+            "name": "about",
+            "fullname": "af_about",
+            "type": "textarea",
+            "data_type": "text",
+            "texts": {
+                "ru": {
+                    "label": "Описание",
+                    "placeholder": ""
+                }
+            }
+        },
+        "fko_service": {
+            "is_additional": false,
+            "foreign_key": true,
+            "name": "service",
+            "fullname": "fko_service",
+            "type": "int",
+            "data_type": "int(11)"
+        },
+        "af_img": {
+            "is_additional": true,
+            "foreign_key": false,
+            "name": "img",
+            "fullname": "af_img",
+            "type": null,
+            "data_type": "enum('jpg','jpeg','png','gif')",
+            "texts": {
+                "ru": {
+                    "label": "Значок",
+                    "placeholder": ""
+                }
+            }
+        },
+        "af_link_text": {
+            "is_additional": true,
+            "foreign_key": false,
+            "name": "link_text",
+            "fullname": "af_link_text",
+            "type": "text",
+            "data_type": "varchar(255)",
+            "texts": {
+                "ru": {
+                    "label": "Текст для ссылки на страницу с формой заявки\/расчёта\/запроса",
+                    "placeholder": ""
+                }
+            }
+        },
+        "af_link": {
+            "is_additional": true,
+            "foreign_key": false,
+            "name": "link",
+            "fullname": "af_link",
+            "type": "text",
+            "data_type": "varchar(255)",
+            "texts": {
+                "ru": {
+                    "label": "Ссылка на страницу с формой заявки\/расчёта\/запроса",
+                    "placeholder": "Оставьте пустым, если в ссылке нет необходимости"
+                }
+            }
+        }
+    },
+    "unique_slug": true,
+    "relations": {
+        "parents": {
+            "service_step__fko_service": {
+                "name": "fko_service",
+                "table": "service",
+                "num": 1,
+                "texts": {
+                    "ru": {
+                        "label": "Услуга"
+                    }
+                }
+            }
+        },
+        "parents_optional": [],
+        "children": [],
+        "children_optional": [],
+        "plural": []
+    }
+}
